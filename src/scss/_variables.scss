@@ -1,0 +1,78 @@
+// white series
+$white: #ffffff;
+$white1: rgba(255, 255, 255, 0.4);
+$white2: rgba(255, 255, 255, 0.3);
+$white3: rgba(255, 255, 255, 0.2);
+$white4: rgba(255, 255, 255, 0.6);
+$white4: rgba(240, 240, 245, 0.4);
+
+// black series
+$font-black: #2a2a2a;
+$dark-charcoal: #333333;
+$mine-shaft: #383838;
+$eerie-black: #222222;
+$black: #000000;
+
+// grey series
+$neutrals-grey: #afb1bd;
+$athens-grey: #e6e6eb;
+$mercury-grey: #e5e5e5;
+$grey: #808080;
+$deep-grey: #4a4a4a;
+$border-grey: #f0f0f5;
+$dark-grey: #999999;
+$granite-grey: #5e5e5e;
+
+$pink: #f67599;
+
+:root {
+  --font-color1: $font-black;
+  --font-color2: $black;
+  --connect-line: $black;
+  --connect-line-undone: $border-grey;
+  --stepper: $font-black;
+  --stepper-undone: $neutrals-grey;
+  --shipping-border-unselected: $border-grey;
+  --shipping-border-selected: $font-black;
+  --radio-btn-background: $white;
+  --radio-btn-border: $eerie-black;
+  --radio-btn-checked: $font-black;
+  --shipping-time: $black;
+  --shopping-cart-background: $white;
+  --shopping-cart-border: $border-grey;
+  --shopping-cart-divider: $border-grey
+  --qty-btn-background: $border-grey;
+  --qty-btn-icon: $black;
+  --input-label: $grey;
+  --input-border: $deep-grey;
+  --input-placeholder: $dark-grey;
+  --input-divider: $athens-grey;
+  --footer-background: $mercury-grey;
+  --footer-content: $grey;
+}
+
+.theme-dark {
+  --font-color1: $white;
+  --font-color2: $white;
+  --connect-line: $white;
+  --connect-line-undone: $white4;
+  --stepper: $white;
+  --stepper-undone: $white1;
+  --shipping-border-unselected: $white;
+  --shipping-border-selected: $granite-grey;
+  --radio-btn-background: $dark-charcoal;
+  --radio-btn-border: $dark-charcoal;
+  --radio-btn-checked: $dark-charcoal;
+  --shipping-time: $white1;
+  --shopping-cart-background: $mine-shaft;
+  --shopping-cart-border: $white3;
+  --shopping-cart-divider: $white3;
+  --qty-btn-background: $grey;
+  --qty-btn-icon: $dark-charcoal;
+  --input-label: $white1;
+  --input-border: $mercury-grey;
+  --input-placeholder: $white1;
+  --input-divider: $white3;
+  --footer-background: $dark-charcoal;
+  --footer-content: $white4;
+}
