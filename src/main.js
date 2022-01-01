@@ -17,7 +17,7 @@ const navCategoriesContent = [
   '客製商品',
 ]
 
-const navCategory = document.querySelector('.nav__category')
+const navCategory = document.querySelector('.nav__wrapper__category')
 
 document.querySelector('.nav__logo--img').src = imgCollections.logo
 document.querySelector('.nav__hamburger--img').src = imgCollections.hamburger
@@ -29,9 +29,9 @@ function renderNavCategory() {
   let htmlContent = ''
   for (let i = 0; i < navCategoriesContent.length; i++) {
     htmlContent += `
-        <a href="javascript:void(0)">
-          <span class="nav__category--content">${navCategoriesContent[i]}</span>
-        </a>
+          <a href="javascript:void(0)">
+            <span class="nav__wrapper__category--content">${navCategoriesContent[i]}</span>
+          </a>
     `
     navCategory.innerHTML = htmlContent
   }

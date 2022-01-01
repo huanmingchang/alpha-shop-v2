@@ -1,0 +1,65 @@
+@use 'layout';
+@use 'variables';
+@use 'mixin';
+
+.nav {
+  @include mixin.flex(column, center, center);
+  position: relative;
+  width: 100%;
+  height: 56px;
+
+  &__hamburger {
+    @include mixin.position(50%, 17px);
+    transform: translate(0, -50%);
+    width: 24px;
+    height: 24px;
+  }
+
+  &__logo {
+    @include mixin.positionCenter;
+    width: 135.86px;
+    height: 24px;
+  }
+
+  &__wrapper {
+    @include mixin.flex(column, center, center);
+    @include mixin.position(100%, 0);
+    transform: translate(0, 0);
+    width: 100%;
+    height: 378px;
+    &__category {
+      @include mixin.flex(column, center, center);
+      transform: translate(0, 0);
+      width: 100%;
+
+      a {
+        text-align: center;
+        width: 92%;
+        color: var(--font-color1);
+      }
+
+      &--content {
+        display: inline-block;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--category-divider);
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+      }
+
+    
+    }
+
+    &__icons {
+      @include mixin.flex(row, space-between, center);
+      margin-top: 1.5rem;
+      width: 154px;
+      height: 24px;
+      &--icon {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
