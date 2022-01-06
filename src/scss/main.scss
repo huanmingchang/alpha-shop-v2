@@ -1,6 +1,7 @@
 @use 'nav';
 @use 'footer';
 @use 'cart';
+@use 'button';
 @import 'include-media';
 
 .main {
@@ -16,5 +17,16 @@
   @include media('>=desktop') {
     margin: 0 auto;
     max-width: calc(1440px - 165px - 165px);
+  }
+
+  &__title {
+    display: none;
+    @include media('>=large') {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 38px;
+      color: var(--font-color1);
+    }
   }
 }
