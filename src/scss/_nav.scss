@@ -109,4 +109,12 @@
       }
     }
   }
+
+  .nav-container {
+    display: none;
+    @include media('>=large') {
+      display: initial;
+      width: 100%;
+    }
+  }
 }

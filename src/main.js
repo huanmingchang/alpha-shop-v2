@@ -20,13 +20,31 @@ const navCategoriesContent = [
   '客製商品',
 ]
 
+const carts = [
+  {
+    productId: 1,
+    img: './../src/assets/product1.svg',
+    productName: '破壞補丁修身牛仔褲',
+    price: 3299,
+    qty: 1,
+  },
+  {
+    productId: 2,
+    img: './../src/assets/product2.svg',
+    productName: '刷色直筒牛仔褲',
+    price: 1299,
+    qty: 1,
+  },
+]
+
 const navCategory = document.querySelector('.nav__wrapper__category')
 const hamburger = document.querySelector('.nav__hamburger')
+const shoppingCart = document.querySelector('.cart__container')
 
 document.querySelector('.nav__logo--img').src = imgCollections.logo
 document.querySelector('.nav__hamburger--img').src = imgCollections.hamburger
 document.querySelector('.search').src = imgCollections.searchIcon
-document.querySelector('.cart').src = imgCollections.cartIcon
+document.querySelector('.shopping-cart').src = imgCollections.cartIcon
 document.querySelector('.switch').src = imgCollections.switchIconMoon
 document.querySelector('.footer__container__logo--img').src =
   imgCollections.logo
@@ -46,10 +64,70 @@ function renderNavCategory() {
   navCategory.innerHTML = htmlContent
 }
 
+function renderCart() {
+  let htmlContent = `
+  <div class="cart__container__title">購物籃</div>
+`
+  for (let i = 0; i < carts.length; i++) {
+    htmlContent += `
+          <div class="cart__container__wrapper">
+            <div class="cart__container__wrapper__product-photo">
+              <img
+                src="${carts[i].img}"
+                alt="product-${carts[i].productId}"
+                class="cart__container__wrapper__product-photo--img"
+              />
+            </div>
+            <div class="cart__container__wrapper__product">
+              <div class="cart__container__wrapper__product__info">
+                <div
+                  class="cart__container__wrapper__product__info__product-name"
+                >${carts[i].productName}</div>
+                <div class="cart__container__wrapper__product__info__modifier">
+                  <div
+                    class="
+                      cart__container__wrapper__product__info__modifier--minus
+                    "
+                  ></div>
+                  <div
+                    class="
+                      cart__container__wrapper__product__info__modifier--qty
+                    "
+                  >${carts[i].qty}</div>
+                  <div
+                    class="
+                      cart__container__wrapper__product__info__modifier--plus"
+                  ></div>
+                </div>
+              </div>
+              <div class="cart__container__wrapper__product__info--price">$${carts[i].price}</div>
+            </div>
+          </div>
+    `
+  }
+
+  htmlContent += `
+        <div class="cart__container__wrapper">
+          <div class="cart__container__wrapper__freight">
+            <div class="cart__container__wrapper__freight--item">運費</div>
+            <div class="cart__container__wrapper__freight--amount">免費</div>
+          </div>
+        </div>
+        <div class="cart__container__wrapper">
+          <div class="cart__container__wrapper__total">
+            <div class="cart__container__wrapper__total--item">小計</div>
+            <div class="cart__container__wrapper__total--amount">$5,298</div>
+          </div>
+        </div>
+  `
+  shoppingCart.innerHTML = htmlContent
+}
+
 function hamburgerOnClick(event) {
   console.log('click')
 }
 
 renderNavCategory()
+renderCart()
 
 hamburger.addEventListener('click', hamburgerOnClick)
