@@ -37,9 +37,22 @@ const carts = [
   },
 ]
 
+const city = [
+  '台北市',
+  '新北市',
+  '桃園市',
+  '新竹市',
+  '台中市',
+  '彰化縣',
+  '嘉義縣',
+  '台南市',
+  '高雄市',
+]
+
 const navCategory = document.querySelector('.nav__wrapper__category')
 const hamburger = document.querySelector('.nav__hamburger')
 const shoppingCart = document.querySelector('.cart__container')
+const citySelector = document.querySelector('#city')
 
 document.querySelector('.nav__logo--img').src = imgCollections.logo
 document.querySelector('.nav__hamburger--img').src = imgCollections.hamburger
@@ -123,11 +136,32 @@ function renderCart() {
   shoppingCart.innerHTML = htmlContent
 }
 
+function renderCitySelector() {
+  let htmlContent = `
+    <option value="disable" selected disabled>請選擇縣市</option>
+  `
+
+  for (let i = 0; i < city.length; i++) {
+    htmlContent += `
+     <option value="${city[i]}">${city[i]}</option>
+    `
+  }
+  citySelector.innerHTML = htmlContent
+}
+
 function hamburgerOnClick(event) {
-  console.log('click')
+  const navContainer = document.querySelector('.nav-container')
+  if (!event.target.classList.contains('nav__hamburger--img')) return
+
+  if (navContainer.classList.contains('d-none')) {
+    navContainer.classList.remove('d-none')
+  } else {
+    navContainer.classList.add('d-none')
+  }
 }
 
 renderNavCategory()
 renderCart()
+renderCitySelector()
 
 hamburger.addEventListener('click', hamburgerOnClick)

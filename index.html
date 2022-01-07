@@ -17,16 +17,14 @@
     <div class="app">
       <nav class="nav">
         <div class="nav__hamburger">
-          <a href="javascript:void(0)">
-            <img src="" alt="hamburger" class="nav__hamburger--img" />
-          </a>
+          <img src="" alt="hamburger" class="nav__hamburger--img" />
         </div>
         <div class="nav__logo">
           <a href="javascript:void(0)">
             <img src="" alt="logo" class="nav__logo--img" />
           </a>
         </div>
-        <div class="nav-container">
+        <div class="nav-container d-none">
           <div class="nav__wrapper">
             <div class="nav__wrapper__category">
               <a href="javascript:void(0)">
@@ -62,9 +60,279 @@
 
       <main class="main">
         <div class="main__title">結帳</div>
-        <section class="stepper"></section>
+        <section class="stepper">
+          <div class="stepper__wrapper"></div>
+        </section>
 
-        <section class="form"></section>
+        <section class="form-panel">
+          <div class="form-panel__container">
+            <form class="form-panel__container__form">
+              <div class="form-panel__container__form__form-part">
+                <div class="form-panel__container__form__form-part--form-title">
+                  寄送地址
+                </div>
+                <div
+                  class="form-panel__container__form__form-part__forms step-1"
+                >
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      title
+                    "
+                  >
+                    <label for="">稱謂</label>
+                    <div
+                      class="
+                        form-panel__container__form__form-part__forms__form-row__select-wrapper
+                      "
+                    >
+                      <select name="gender" id="gender" required>
+                        <option value="male" selected>先生</option>
+                        <option value="female">小姐</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      name
+                    "
+                  >
+                    <label for="">姓名</label>
+                    <input
+                      id="customer-name"
+                      type="text"
+                      placeholder="請輸入姓名"
+                      required
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      phone
+                    "
+                  >
+                    <label for="">電話</label>
+                    <input
+                      id="customer-phone"
+                      type="text"
+                      placeholder="請輸入行動電話"
+                      required
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      email
+                    "
+                  >
+                    <label for="">Email</label>
+                    <input
+                      id="customer-email"
+                      type="text"
+                      placeholder="請輸入電子郵件"
+                      required
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      city
+                    "
+                  >
+                    <label for="">縣市</label>
+                    <div
+                      class="
+                        form-panel__container__form__form-part__forms__form-row__city-wrapper
+                      "
+                    >
+                      <select name="city" id="city" required></select>
+                    </div>
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      address
+                    "
+                  >
+                    <label for="">地址</label>
+                    <input
+                      id="customer-address"
+                      type="text"
+                      placeholder="請輸入地址"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-panel__container__form__form-part">
+                <div class="form-panel__container__form__form-part--form-title">
+                  運送方式
+                </div>
+                <div
+                  class="form-panel__container__form__form-part__forms step-2"
+                >
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__radio-wrapper
+                    "
+                    data-standard-delivery
+                  >
+                    <input
+                      type="radio"
+                      name="delivery"
+                      id="general"
+                      value="general"
+                      class="
+                        form-panel__container__form__form-part__forms__radio-wrapper--radio-btn
+                      "
+                    />
+                    <label
+                      for="general"
+                      class="
+                        form-panel__container__form__form-part__forms__radio-wrapper__container
+                      "
+                    >
+                      <div
+                        class="
+                          form-panel__container__form__form-part__forms__radio-wrapper__container__details
+                        "
+                      >
+                        <div
+                          class="
+                            form-panel__container__form__form-part__forms__radio-wrapper__container__details--option
+                          "
+                        >
+                          標準運送
+                        </div>
+                        <div
+                          class="
+                            form-panel__container__form__form-part__forms__radio-wrapper__container__details--freight
+                          "
+                        >
+                          免費
+                        </div>
+                      </div>
+                      <div
+                        class="
+                          form-panel__container__form__form-part__forms__radio-wrapper__container__time
+                        "
+                      >
+                        約 3~7 個工作天
+                      </div>
+                    </label>
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__radio-wrapper
+                    "
+                    data-dhl-delivery
+                  >
+                    <input
+                      type="radio"
+                      name="delivery"
+                      id="dhl"
+                      value="dhl"
+                      class="
+                        form-panel__container__form__form-part__forms__radio-wrapper--radio-btn
+                      "
+                    />
+                    <label
+                      for="dhl"
+                      class="
+                        form-panel__container__form__form-part__forms__radio-wrapper__container
+                      "
+                    >
+                      <div
+                        class="
+                          form-panel__container__form__form-part__forms__radio-wrapper__container__details
+                        "
+                      >
+                        <div
+                          class="
+                            form-panel__container__form__form-part__forms__radio-wrapper__container__details--option
+                          "
+                        >
+                          DHL 貨運
+                        </div>
+                        <div
+                          class="
+                            form-panel__container__form__form-part__forms__radio-wrapper__container__details--freight
+                          "
+                        >
+                          $500
+                        </div>
+                      </div>
+                      <div
+                        class="
+                          form-panel__container__form__form-part__forms__radio-wrapper__container__time
+                        "
+                      >
+                        48 小時內送達
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-panel__container__form__form-part">
+                <div class="form-panel__container__form__form-part--form-title">
+                  付款資訊
+                </div>
+                <div
+                  class="form-panel__container__form__form-part__forms step-3"
+                >
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      card-name
+                    "
+                  >
+                    <label for="">持卡人姓名</label>
+                    <input
+                      id="cardholder-name"
+                      type="text"
+                      placeholder="John Doe"
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      card-number
+                    "
+                  >
+                    <label for="">卡號</label>
+                    <input
+                      id="creditcard-number"
+                      type="text"
+                      placeholder="1111 2222 3333 4444"
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      card-validity
+                    "
+                  >
+                    <label for="">有效期限</label>
+                    <input
+                      id="creditcard-validity"
+                      type="text"
+                      placeholder="MM/YY"
+                    />
+                  </div>
+                  <div
+                    class="
+                      form-panel__container__form__form-part__forms__form-row
+                      cvc
+                    "
+                  >
+                    <label for="">CVC / CCV</label>
+                    <input id="creditcard-cvc" type="text" placeholder="123" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
 
         <section class="cart">
           <div class="cart__container"></div>
