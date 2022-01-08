@@ -138,7 +138,7 @@ function renderCart() {
 
 function renderCitySelector() {
   let htmlContent = `
-    <option value="disable" selected disabled>請選擇縣市</option>
+    <option value="" selected disabled>請選擇縣市</option>
   `
 
   for (let i = 0; i < city.length; i++) {

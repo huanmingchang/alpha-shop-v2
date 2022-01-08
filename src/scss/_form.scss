@@ -1,0 +1,224 @@
+@use 'reset';
+@use 'layout';
+@use 'variables';
+@use 'mixin';
+@import 'include-media';
+
+%input-style {
+  padding: 0.75rem 0 0.75rem 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  height: 40px;
+  background: var(--background);
+}
+
+%placeholder {
+  @include mixin.fontStyles(0.75rem, 400, 1rem, var(--input-placeholder));
+}
+
+.form-panel {
+  &__container {
+    &__form {
+      &__form-part {
+        &--form-title {
+          margin-bottom: 1.5rem;
+          @include mixin.fontStyles(1.5rem, 700, 1.5rem, var(--font-color1));
+        }
+
+        &__forms {
+          &__form-row {
+            @include mixin.flex(column, flex-start, flex-start);
+            margin-bottom: 1.5rem;
+            label {
+              margin-bottom: 0.5rem;
+              @include mixin.fontStyles(0.75rem, 700, 1rem, var(--input-label));
+            }
+
+            input[type='text'] {
+              @extend %input-style;
+              width: 100%;
+              ::placeholder {
+                @extend %placeholder;
+              }
+            }
+            input[type='text']:hover,
+            input[type='text']:focus {
+              border-color: var(--input-placeholder);
+            }
+
+            &__select-wrapper {
+              position: relative;
+              z-index: 0;
+              width: 100%;
+              &::after {
+                content: '\25BE';
+                position: absolute;
+                top: 50%;
+                right: 8px;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                color: var(--font-color1);
+              }
+              select {
+                @extend %input-style;
+                -webkit-appearance: none;
+                background: transparent;
+                cursor: pointer;
+                width: 100%;
+              }
+
+              select:hover,
+              select:focus {
+                border-color: var(--input-placeholder);
+              }
+
+              select:invalid {
+                @extend %placeholder;
+              }
+            }
+          }
+
+          &__radio-wrapper {
+            @include mixin.flex(row, flex-start, center);
+            background: var(--background);
+            border: 1px solid var(--shipping-border-unselected);
+            border-radius: 4px;
+            input[type='radio'] {
+              -webkit-appearance: none;
+              margin: 1.25rem;
+              width: 1.25rem;
+              height: 1.25rem;
+              background: var(--radio-btn-background);
+              border: 1px solid var(--radio-btn-border);
+              border-radius: 50%;
+
+              &:checked {
+                box-shadow: inset 0 0 0 5px var(--radio-btn-checked);
+                background: var(--radio-btn-background);
+              }
+            }
+
+            &__container {
+              @include mixin.flex(column, flex-start, flex-start);
+              flex: 1;
+              margin-right: 1.25rem;
+              &__details {
+                @include mixin.flex(row, space-between, center);
+                margin-bottom: 0.125rem;
+                width: 100%;
+                &--option {
+                  @include mixin.fontStyles(
+                    0.875rem,
+                    400,
+                    1.25rem,
+                    var(--font-color2)
+                  );
+                }
+                &--option,
+                [data-dhl] {
+                  font-weight: 700;
+                }
+
+                &--freight {
+                  @include mixin.fontStyles(
+                    0.875rem,
+                    400,
+                    1rem,
+                    var(--font-color2)
+                  );
+                }
+              }
+
+              &__time {
+                @include mixin.fontStyles(
+                  0.75rem,
+                  400,
+                  1rem,
+                  var(--font-color2)
+                );
+              }
+            }
+          }
+
+          &__radio-wrapper:hover {
+            border-color: var(--shipping-border-selected);
+          }
+
+          &__radio-wrapper,
+          [data-standard-delivery] {
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        &__forms.step-1 {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: auto;
+          column-gap: 1.875rem;
+          grid-template-areas:
+            'title title name name name'
+            'phone phone phone phone phone'
+            'email email email email email'
+            'city city city city city'
+            'address address address address address';
+          @include media('>=small') {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-areas:
+              'title title name name name name'
+              'phone phone phone email email email'
+              'city city address address address address';
+          }
+          .title {
+            grid-area: title;
+          }
+          .name {
+            grid-area: name;
+          }
+          .phone {
+            grid-area: phone;
+          }
+
+          .email {
+            grid-area: email;
+          }
+          .city {
+            grid-area: city;
+          }
+          .address {
+            grid-area: address;
+          }
+        }
+
+        &__forms.step-3 {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: auto;
+          column-gap: 1.875rem;
+          grid-template-areas:
+            'card-name card-name card-name card-name'
+            'card-number card-number card-number card-number'
+            'validity validity cvc cvc';
+          @include media('>=small') {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-areas:
+              'card-name card-name card-name card-name . .'
+              'card-number card-number card-number card-number . .'
+              'validity validity validity cvc cvc cvc';
+          }
+          .card-name {
+            grid-area: card-name;
+          }
+          .card-number {
+            grid-area: card-number;
+          }
+          .card-validity {
+            grid-area: validity;
+          }
+          .cvc {
+            grid-area: cvc;
+          }
+        }
+      }
+    }
+  }
+}

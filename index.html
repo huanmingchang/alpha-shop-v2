@@ -87,7 +87,8 @@
                       "
                     >
                       <select name="gender" id="gender" required>
-                        <option value="male" selected>先生</option>
+                        <option value="" selected disabled>請選擇稱謂</option>
+                        <option value="male">先生</option>
                         <option value="female">小姐</option>
                       </select>
                     </div>
@@ -143,7 +144,7 @@
                     <label for="">縣市</label>
                     <div
                       class="
-                        form-panel__container__form__form-part__forms__form-row__city-wrapper
+                        form-panel__container__form__form-part__forms__form-row__select-wrapper
                       "
                     >
                       <select name="city" id="city" required></select>
@@ -251,6 +252,7 @@
                           class="
                             form-panel__container__form__form-part__forms__radio-wrapper__container__details--option
                           "
+                          data-dhl
                         >
                           DHL 貨運
                         </div>
@@ -291,6 +293,7 @@
                       id="cardholder-name"
                       type="text"
                       placeholder="John Doe"
+                      required
                     />
                   </div>
                   <div
@@ -304,6 +307,7 @@
                       id="creditcard-number"
                       type="text"
                       placeholder="1111 2222 3333 4444"
+                      required
                     />
                   </div>
                   <div
@@ -317,6 +321,7 @@
                       id="creditcard-validity"
                       type="text"
                       placeholder="MM/YY"
+                      required
                     />
                   </div>
                   <div
@@ -326,7 +331,12 @@
                     "
                   >
                     <label for="">CVC / CCV</label>
-                    <input id="creditcard-cvc" type="text" placeholder="123" />
+                    <input
+                      id="creditcard-cvc"
+                      type="text"
+                      placeholder="123"
+                      required
+                    />
                   </div>
                 </div>
               </div>

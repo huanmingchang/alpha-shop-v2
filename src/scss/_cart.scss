@@ -5,9 +5,14 @@
 @import 'include-media';
 
 .cart {
+  margin-top: 2rem;
+  @include media('>=large') {
+    margin-top: 0;
+  }
+
   &__container {
     padding: 1.125rem 1rem;
-    width: 92%;
+    width: 100%;
     background: var(--shopping-cart-background);
     border: 1px solid var(--shopping-cart-border);
     border-radius: 8px;
@@ -19,10 +24,7 @@
 
     &__title {
       display: none;
-      font-size: 1.125rem;
-      font-weight: 700;
-      line-height: 22px;
-      color: var(--font-color1);
+      @include mixin.fontStyles(1.125rem, 700, 1.375rem, var(--font-color1));
       @include media('>=large') {
         display: block;
         margin-bottom: 34px;
@@ -48,21 +50,18 @@
         flex: 1;
         width: 100%;
         height: 100px;
-        @include media('>=medium') {
+        @include media('>=small') {
           @include mixin.flex(row, space-between, flex-start);
           margin-left: 21px;
         }
 
         &__info {
           @include mixin.flex(column, flex-start, flex-end);
-          @include media('>=medium') {
+          @include media('>=small') {
             @include mixin.flex(column, flex-start, flex-start);
           }
           &--product-name {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 24px;
-            color: var(--font-color1);
+            @include mixin.fontStyles(1rem, 400, 1.5rem, var(--font-color1));
           }
 
           &__modifier {
@@ -71,10 +70,7 @@
             width: 116px;
             height: 27px;
             &--qty {
-              font-size: 1rem;
-              font-weight: 400;
-              line-height: 24px;
-              color: var(--font-color1);
+              @include mixin.fontStyles(1rem, 400, 1.5rem, var(--font-color1));
             }
             &--minus,
             &--plus {
@@ -103,10 +99,7 @@
 
           &--price {
             font-family: 'Nunito Sans';
-            font-size: 1rem;
-            font-weight: 700;
-            line-height: 22px;
-            color: var(--font-color1);
+            @include mixin.fontStyles(1rem, 700, 1.375rem, var(--font-color1));
           }
         }
       }
@@ -119,18 +112,12 @@
         width: 100%;
 
         &--item {
-          font-size: 0.875rem;
-          font-weight: 400;
-          line-height: 20px;
-          color: var(--font-color1);
+          @include mixin.fontStyles(0.875rem, 400, 1.25rem, var(--font-color1));
         }
 
         &--amount {
           font-family: 'Nunito Sans';
-          font-size: 0.875rem;
-          font-weight: 700;
-          line-height: 17px;
-          color: var(--font-color2);
+          @include mixin.fontStyles(0.875rem, 700, 17px, var(--font-color2));
         }
       }
 

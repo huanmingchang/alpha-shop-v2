@@ -36,9 +36,7 @@ footer {
       height: 100%;
       &--title {
         padding: 4rem 0 1.5rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--font-color1);
+        @include mixin.fontStyles(1.5rem, 700, 1.5rem, var(--font-color1));
       }
 
       &__wrapper {
@@ -51,10 +49,7 @@ footer {
         &--content {
           display: inline-block;
           padding-bottom: 0.5rem;
-          font-size: 1rem;
-          font-weight: 400;
-          line-height: 17px;
-          color: var(--footer-content);
+          @include mixin.fontStyles(1rem, 400, 17px, var(--footer-content));
         }
 
         &__icons {

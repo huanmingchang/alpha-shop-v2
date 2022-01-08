@@ -88,9 +88,7 @@
         padding: 1.5rem 0;
         border-bottom: 1px solid var(--category-divider);
         width: 100%;
-        font-size: 1rem;
-        line-height: 1.5rem;
-        font-weight: 500;
+        @include mixin.fontStyles(1rem, 500, 1.5rem, var(--font-color1));
         @include media('>=large') {
           padding: 0;
           border-bottom: none;

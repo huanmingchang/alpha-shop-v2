@@ -1,13 +1,17 @@
 @use 'nav';
 @use 'footer';
+@use 'form';
 @use 'cart';
 @use 'button';
+@use 'mixin';
 @import 'include-media';
 
 .main {
   margin: 0 1rem;
   outline: 1px solid red;
-
+  @include media('>=small') {
+    margin: 0 2rem;
+  }
   @include media('>=large') {
     margin: 0 3rem;
   }
@@ -23,10 +27,7 @@
     display: none;
     @include media('>=large') {
       display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 38px;
-      color: var(--font-color1);
+      @include mixin.fontStyles(2rem, 700, 2.375rem, var(--font-color1));
     }
   }
 }
