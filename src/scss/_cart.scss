@@ -5,6 +5,7 @@
 @import 'include-media';
 
 .cart {
+  grid-area: cart;
   margin-top: 2rem;
   @include media('>=large') {
     margin-top: 0;
@@ -19,7 +20,6 @@
 
     @include media('>=large') {
       padding: 2rem 1.5rem;
-      width: 440px;
     }
 
     &__title {

@@ -24,3 +24,11 @@
   line-height: $line-height;
   color: $color;
 }
+
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i}) .stepper__container__step--circle-container::after {
+      content: '#{$i}';
+    }
+  }
+}

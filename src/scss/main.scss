@@ -1,17 +1,32 @@
 @use 'nav';
-@use 'footer';
+@use 'stepper';
 @use 'form';
 @use 'cart';
 @use 'button';
+@use 'footer';
+
 @use 'mixin';
 @import 'include-media';
 
 .main {
+  min-width: 320px;
   margin: 0 1rem;
   outline: 1px solid red;
   @include media('>=small') {
     margin: 0 2rem;
   }
+  @include media('>=medium') {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    // column-gap: 1.875rem;
+    grid-template-areas:
+      'main-title main-title . . . . . . . . . .'
+      'stepper stepper stepper stepper stepper stepper . cart cart cart cart cart'
+      'form-panel form-panel form-panel form-panel form-panel form-panel . cart cart cart cart cart'
+      'button button button button button button . cart cart cart cart cart';
+  }
+
   @include media('>=large') {
     margin: 0 3rem;
   }
@@ -24,8 +39,9 @@
   }
 
   &__title {
+    grid-area: main-title;
     display: none;
-    @include media('>=large') {
+    @include media('>=medium') {
       display: block;
       @include mixin.fontStyles(2rem, 700, 2.375rem, var(--font-color1));
     }

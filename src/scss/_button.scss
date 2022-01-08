@@ -5,6 +5,7 @@
 @import 'include-media';
 
 .button {
+  grid-area: button;
   @include mixin.flex(row, space-between, center);
   margin-top: 2rem;
   padding-top: 26px;

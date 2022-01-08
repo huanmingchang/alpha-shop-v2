@@ -1,0 +1,132 @@
+@use 'reset';
+@use 'layout';
+@use 'variables';
+@use 'mixin';
+@import 'include-media';
+
+.stepper {
+  grid-area: stepper;
+  margin: 1.5rem 0;
+  @include media('>=medium') {
+    margin: 3rem 0 4rem;
+  }
+  &__container {
+    @include mixin.flex(row, space-between, center);
+    outline: 1px solid green;
+    &__step {
+      @include mixin.getStepNums(3);
+      @include mixin.flex(row, flex-start, center);
+      position: relative;
+      &--circle-container {
+        @include mixin.flex(row, center, center);
+        width: 32px;
+        height: 32px;
+        border: 1px solid var(--stepper-undone);
+        color: var(--stepper-undone);
+        border-radius: 50%;
+        @include media('>=small') {
+          margin-right: 0.5rem;
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &--connect-line {
+        position: absolute;
+        top: 50%;
+        right: -270%;
+        border-top: 2px solid var(--connect-line-undone);
+        width: 60px;
+        @include media('<=320px') {
+          display: none;
+        }
+        @include media('>=x-small') {
+          right: -330%;
+        }
+        @include media('>=500px') {
+          right: -400%;
+        }
+        @include media('>=small') {
+          right: -90%;
+        }
+        @include media('>=650px') {
+          right: -110%;
+        }
+        @include media('>=medium') {
+          display: none;
+        }
+        @include media('>=large') {
+          display: block;
+          right: -100%;
+        }
+        @include media('>=extra-large') {
+          right: -110%;
+        }
+        @include media('>=1350px') {
+          right: -120%;
+        }
+        @include media('>=desktop') {
+          right: -100%;
+        }
+      }
+
+      &--label-container {
+        @include mixin.fontStyles(1rem, 400, 1.5rem, var(--stepper-undone));
+        display: none;
+
+        @include media('>=small') {
+          display: block;
+        }
+      }
+
+      &.initial {
+        .stepper__container__step--circle-container {
+          border-color: var(--stepper-done);
+          background: var(--stepper-done);
+          color: variables.$white;
+        }
+
+        .stepper__container__step--label-container {
+          color: var(--font-color1);
+        }
+
+        .stepper__container__step--connect-line {
+          border-color: var(--font-color1);
+        }
+      }
+
+      &.active {
+        .stepper__container__step--circle-container {
+          border-color: var(--font-color1);
+          background: var(--background);
+          color: var(--font-color1);
+        }
+
+        .stepper__container__step--label-container {
+          color: var(--font-color1);
+        }
+        .stepper__container__step--connect-line {
+          border-color: var(--font-color1);
+        }
+      }
+
+      &.checked {
+        .stepper__container__step--circle-container {
+          border-color: var(--stepper-done);
+          background: var(--stepper-done);
+          color: variables.$white;
+        }
+
+        .stepper__container__step--circle-container::after {
+          content: '\2714';
+        }
+        .stepper__container__step--label-container {
+          color: var(--font-color1);
+        }
+        .stepper__container__step--connect-line {
+          border-color: var(--font-color1);
+        }
+      }
+    }
+  }
+}
