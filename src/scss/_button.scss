@@ -15,7 +15,7 @@
   @include media('>=large') {
     margin-top: calc(3rem - 1px);
     padding-top: 1.5rem;
-    width: 540px;
+    width: 100%;
   }
 
   .btn {
