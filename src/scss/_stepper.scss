@@ -12,7 +12,6 @@
   }
   &__container {
     @include mixin.flex(row, space-between, center);
-    outline: 1px solid green;
     &__step {
       @include mixin.getStepNums(3);
       @include mixin.flex(row, flex-start, center);

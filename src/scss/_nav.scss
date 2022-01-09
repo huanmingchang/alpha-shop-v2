@@ -26,6 +26,10 @@
     @include media('>=large') {
       display: none;
     }
+    &--img {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &__logo {
@@ -92,6 +96,9 @@
         @include media('>=large') {
           padding: 0;
           border-bottom: none;
+        }
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

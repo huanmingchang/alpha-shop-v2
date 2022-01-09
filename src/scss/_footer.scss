@@ -50,6 +50,9 @@ footer {
           display: inline-block;
           padding-bottom: 0.5rem;
           @include mixin.fontStyles(1rem, 400, 17px, var(--footer-content));
+          &:hover {
+            text-decoration: underline;
+          }
         }
 
         &__icons {

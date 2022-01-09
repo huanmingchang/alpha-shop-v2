@@ -13,6 +13,8 @@
   height: 72px;
   border-top: 1px solid var(--input-divider);
   @include media('>=large') {
+    margin-top: calc(3rem - 1px);
+    padding-top: 1.5rem;
     width: 540px;
   }
 
@@ -28,11 +30,18 @@
     @include media('>=large') {
       width: 174px;
     }
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   .btn-prev {
     background: transparent;
     color: var(--font-color2);
+    &:hover {
+      border: 1px solid var(--font-color2);
+    }
   }
 
   .btn-prev.first-step {

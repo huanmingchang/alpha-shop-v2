@@ -186,7 +186,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-panel__container__form__form-part">
+              <div class="form-panel__container__form__form-part d-none">
                 <div class="form-panel__container__form__form-part--form-title">
                   運送方式
                 </div>
@@ -194,41 +194,51 @@
                   class="form-panel__container__form__form-part__forms step-2"
                 >
                   <div
+                    id="standard-delivery"
                     class="
                       form-panel__container__form__form-part__forms__radio-wrapper
+                      checked
+                      standard
                     "
-                    data-standard-delivery
+                    data-delivery="standard"
                   >
                     <input
                       type="radio"
                       name="delivery"
-                      id="general"
-                      value="general"
+                      id="standard"
+                      value="standard"
                       class="
                         form-panel__container__form__form-part__forms__radio-wrapper--radio-btn
+                        standard
                       "
+                      checked
                     />
                     <label
-                      for="general"
+                      for="standard"
                       class="
                         form-panel__container__form__form-part__forms__radio-wrapper__container
+                        standard
                       "
                     >
                       <div
                         class="
                           form-panel__container__form__form-part__forms__radio-wrapper__container__details
+                          standard
                         "
                       >
                         <div
                           class="
                             form-panel__container__form__form-part__forms__radio-wrapper__container__details--option
+                            standard
                           "
+                          data-standard
                         >
                           標準運送
                         </div>
                         <div
                           class="
                             form-panel__container__form__form-part__forms__radio-wrapper__container__details--freight
+                            standard
                           "
                         >
                           免費
@@ -237,6 +247,7 @@
                       <div
                         class="
                           form-panel__container__form__form-part__forms__radio-wrapper__container__time
+                          standard
                         "
                       >
                         約 3~7 個工作天
@@ -244,10 +255,12 @@
                     </label>
                   </div>
                   <div
+                    id="dhl-delivery"
                     class="
                       form-panel__container__form__form-part__forms__radio-wrapper
+                      dhl
                     "
-                    data-dhl-delivery
+                    data-delivery="dhl"
                   >
                     <input
                       type="radio"
@@ -256,22 +269,26 @@
                       value="dhl"
                       class="
                         form-panel__container__form__form-part__forms__radio-wrapper--radio-btn
+                        dhl
                       "
                     />
                     <label
                       for="dhl"
                       class="
                         form-panel__container__form__form-part__forms__radio-wrapper__container
+                        dhl
                       "
                     >
                       <div
                         class="
                           form-panel__container__form__form-part__forms__radio-wrapper__container__details
+                          dhl
                         "
                       >
                         <div
                           class="
                             form-panel__container__form__form-part__forms__radio-wrapper__container__details--option
+                            dhl
                           "
                           data-dhl
                         >
@@ -280,6 +297,7 @@
                         <div
                           class="
                             form-panel__container__form__form-part__forms__radio-wrapper__container__details--freight
+                            dhl
                           "
                         >
                           $500
@@ -288,6 +306,7 @@
                       <div
                         class="
                           form-panel__container__form__form-part__forms__radio-wrapper__container__time
+                          dhl
                         "
                       >
                         48 小時內送達
@@ -296,7 +315,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-panel__container__form__form-part">
+              <div class="form-panel__container__form__form-part d-none">
                 <div class="form-panel__container__form__form-part--form-title">
                   付款資訊
                 </div>
@@ -370,8 +389,8 @@
         </section>
 
         <section class="button">
-          <button class="btn btn-prev">上一步</button>
-          <button class="btn btn-next">下一步</button>
+          <button class="btn btn-prev first-step">上一步</button>
+          <button class="btn btn-next first-step">下一步</button>
         </section>
       </main>
 
@@ -430,7 +449,7 @@
           <div class="footer__container__info">
             <div class="footer__container__info--title">資訊</div>
             <div class="footer__container__info__wrapper">
-              <a href="javascript:void(0)"
+              <a href="#"
                 ><span class="footer__container__info__wrapper--content"
                   >隱私權政策</span
                 ></a

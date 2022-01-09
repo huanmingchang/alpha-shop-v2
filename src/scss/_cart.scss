@@ -4,11 +4,24 @@
 @use 'mixin';
 @import 'include-media';
 
+// *::-webkit-scrollbar {
+//   width: 2px;
+// }
+
+// *::-webkit-scrollbar-track {
+//   background: variables.$mercury-grey;
+// }
+
+// *::-webkit-scrollbar-thumb {
+//   background-color: variables.$granite-grey;
+//   border-radius: 8px;
+// }
+
 .cart {
   grid-area: cart;
   margin-top: 2rem;
-  @include media('>=large') {
-    margin-top: 0;
+  @include media('>=medium') {
+    margin-top: 3rem;
   }
 
   &__container {
@@ -17,9 +30,9 @@
     background: var(--shopping-cart-background);
     border: 1px solid var(--shopping-cart-border);
     border-radius: 8px;
-
     @include media('>=large') {
-      padding: 2rem 1.5rem;
+      padding: 0 1.5rem;
+      height: 492px;
     }
 
     &__title {
@@ -28,6 +41,7 @@
       @include media('>=large') {
         display: block;
         margin-bottom: 34px;
+        margin-top: 32px;
       }
     }
 
@@ -79,6 +93,11 @@
               height: 27px;
               border-radius: 50%;
               background: var(--qty-btn-background);
+            }
+
+            &--minus:hover,
+            &--plus:hover {
+              background: var(--stepper-undone);
             }
 
             &--minus::before {

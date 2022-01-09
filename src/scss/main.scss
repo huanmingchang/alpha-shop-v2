@@ -8,18 +8,21 @@
 @use 'mixin';
 @import 'include-media';
 
+.app {
+  background: var(--background);
+}
+
 .main {
   min-width: 320px;
-  margin: 0 1rem;
-  outline: 1px solid red;
+  margin: 1rem 1rem 1rem;
   @include media('>=small') {
-    margin: 0 2rem;
+    margin: 1rem 2rem 1rem;
   }
   @include media('>=medium') {
+    margin: 1rem 2rem 1rem;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto;
-    // column-gap: 1.875rem;
     grid-template-areas:
       'main-title main-title . . . . . . . . . .'
       'stepper stepper stepper stepper stepper stepper . cart cart cart cart cart'
@@ -28,13 +31,13 @@
   }
 
   @include media('>=large') {
-    margin: 0 3rem;
+    margin: 5rem 3rem 7.75rem;
   }
   @include media('>=extra-large') {
-    margin: 0 4rem;
+    margin: 5rem 4rem 7.75rem;
   }
   @include media('>=desktop') {
-    margin: 0 auto;
+    margin: 5rem auto 7.75rem;
     max-width: calc(1440px - 165px - 165px);
   }
 
