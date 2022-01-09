@@ -30,14 +30,14 @@ const navCategoriesContent = [
 const carts = [
   {
     productId: 1,
-    img: './../src/assets/product1.svg',
+    img: './src/assets/product1.svg',
     productName: '破壞補丁修身牛仔褲',
     price: 3299,
     qty: 1,
   },
   {
     productId: 2,
-    img: './../src/assets/product2.svg',
+    img: './src/assets/product2.svg',
     productName: '刷色直筒牛仔褲',
     price: 1299,
     qty: 1,
