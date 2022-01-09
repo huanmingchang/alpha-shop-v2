@@ -1,22 +1,22 @@
 import './scss/main.scss'
 
 const imgCollections = {
-  logo: './../src/assets/logo-daymode.svg',
-  logoNightMode: './../src/assets/logo-nightmode.svg',
-  hamburger: './../src/assets/hamburger-daymode.svg',
-  hamburgerNightMode: './../src/assets/hamburger-nightmode.png',
-  searchIcon: './../src/assets/search-icon-daymode.svg',
-  searchIconNightMode: './../src/assets/search-icon-nightmode.svg',
-  cartIcon: './../src/assets/shoppingcart-icon-daymode.svg',
-  cartIconNightMode: './../src/assets/shoppingcart-icon-nightmode.svg',
-  switchIconMoon: './../src/assets/moon-icon-daymode.svg',
-  switchIconSun: './../src/assets/sun-icon-nightmode.svg',
-  fbIcon: './../src/assets/fb-icon-daymode.svg',
-  fbIconNightMode: './../src/assets/fb-icon-nightmode.svg',
-  igIcon: './../src/assets/instagram-icon-daymode.svg',
-  igIconNightMode: './../src/assets/instagram-icon-nightmode.svg',
-  whatsappIcon: './../src/assets/whatsapp-icon-daymode.svg',
-  whatsappIconNightMode: './../src/assets/whatsapp-icon-nightmode.svg',
+  logo: './src/assets/logo-daymode.svg',
+  logoNightMode: './src/assets/logo-nightmode.svg',
+  hamburger: './src/assets/hamburger-daymode.svg',
+  hamburgerNightMode: './src/assets/hamburger-nightmode.png',
+  searchIcon: './src/assets/search-icon-daymode.svg',
+  searchIconNightMode: './src/assets/search-icon-nightmode.svg',
+  cartIcon: './src/assets/shoppingcart-icon-daymode.svg',
+  cartIconNightMode: './src/assets/shoppingcart-icon-nightmode.svg',
+  switchIconMoon: './src/assets/moon-icon-daymode.svg',
+  switchIconSun: './src/assets/sun-icon-nightmode.svg',
+  fbIcon: './src/assets/fb-icon-daymode.svg',
+  fbIconNightMode: './src/assets/fb-icon-nightmode.svg',
+  igIcon: './src/assets/instagram-icon-daymode.svg',
+  igIconNightMode: './src/assets/instagram-icon-nightmode.svg',
+  whatsappIcon: './src/assets/whatsapp-icon-daymode.svg',
+  whatsappIconNightMode: './src/assets/whatsapp-icon-nightmode.svg',
 }
 
 const navCategoriesContent = [
